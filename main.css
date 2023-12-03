@@ -2,10 +2,27 @@ body{
     background-color: #6457A6 ;
 }
 #page{
-    width: auto;
-    margin:auto;
-    
+    width: 100%;
+    margin:0;
     height: 150px;
+    border-radius: 15px;
     background-color: #2E00AF;
     
+}
+#startnavi{
+    display: flex;
+    /* top: 50px; */
+    background-color: aqua;
+
+}
+.firstPageButtons{
+    width: 150px;
+    height: 60px;
+    display: flex;
+    margin: 39px;
+    background-color: #3461FF;
+
+}
+.ieiesana_registesana{
+    background-color: #110041;
 }

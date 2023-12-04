@@ -11,15 +11,20 @@ body{
 }
 #startnavi{
     display: flex;
-    /* top: 50px; */
+    position: absolute;
+    right: 39px;
+    
     background-color: aqua;
 
 }
 .firstPageButtons{
+    
     width: 150px;
     height: 60px;
+    
     display: flex;
-    margin: 39px;
+    
+    
     background-color: #3461FF;
 
 }

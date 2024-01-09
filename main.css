@@ -46,8 +46,12 @@ body{
 }
 
 .liginboard{
-    flex-shrink: 0;
+    display: flex;
+    position:sticky ;
+    vertical-align: middle;
     width: 1100px;
     height: 637.5px;
     background-color: #4B0065;
+    margin:auto;
+    margin-top:100px;
 }

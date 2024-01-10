@@ -40,7 +40,7 @@ body{
 #top{
    
 }
-
+/* sākam veidot login page */
 .ieiesana_registesana{
     background-color: #110041;
 }
@@ -54,4 +54,10 @@ body{
     background-color: #4B0065;
     margin:auto;
     margin-top:100px;
+}
+#ielogošanas{
+    position: relative;
+    
+    margin:auto;
+    margin-top: 15px;
 }

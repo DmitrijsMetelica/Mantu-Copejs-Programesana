@@ -41,6 +41,7 @@ body{
    
 }
 /* sākam veidot login page */
+
 .ieiesana_registesana{
     background-color: #110041;
 }
@@ -56,7 +57,7 @@ body{
     border-radius: 10px;
     background-color: #4B0065;
     margin:auto;
-    margin-top:100px;
+    margin-top:150px;
 }
 #ielogošanas{
     position: relative;
@@ -64,7 +65,7 @@ body{
     display: flex;
     margin: auto;
     margin-top: 300.75px;
-    background-color: rgb(35, 91, 139);
+    /* background-color: rgb(35, 91, 139); ... Vienkārši objektu orientācija. */
     
 }
 #ielogosanas_inputi{
@@ -72,24 +73,34 @@ body{
     
 }
 #ielogosanas_inputi input {
-    
-    
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
     width: 900px;
-    padding: 40px;
-    
-    margin-bottom: 12px;
+    padding: 33px;
     margin-bottom: 45px;
     border: 1px solid #CDCDCD;
-    
     margin-left:-41px;
-    
+    font-size: 40px;
+    color:#000;
 }
 
 #ielogosanas_inputi button {
+    
+    height: 100px;
+    width: 200px;
+    font-size: 40px;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 100;
+    line-height: normal; 
     background-color: #3461FF;
     color: #CDCDCD;
     padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
+    margin-left: 726px;
+    color: #000;
 }
+/* Sākam veidot register page */
+

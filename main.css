@@ -104,3 +104,19 @@ body{
 }
 /* Sākam veidot register page */
 
+#registresanas_inputi{
+    margin-top: -270px;
+    
+}
+
+#registresanas_inputi input {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    width: 940px;
+    padding: 17px;
+    margin-bottom: 45px;
+    border: 1px solid #CDCDCD;
+    margin-left:-41px;
+    font-size: 40px;
+    color:#000;
+}

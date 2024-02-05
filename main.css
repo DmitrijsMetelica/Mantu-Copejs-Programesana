@@ -93,7 +93,7 @@ body{
     font-style: italic;
     font-weight: 100;
     line-height: normal; 
-    background-color: #3461FF;
+    background-color: #0095B6;
     color: #CDCDCD;
     padding: 12px 24px;
     border: none;
@@ -102,21 +102,48 @@ body{
     margin-left: 726px;
     color: #000;
 }
+input::placeholder{
+    color: rgb(0, 0, 0);
+  }
+
 /* Sākam veidot register page */
 
 #registresanas_inputi{
-    margin-top: -270px;
+    margin-top: -278px;
+    
     
 }
 
 #registresanas_inputi input {
     font-family: 'Inter', sans-serif;
-    font-style: normal;
+    font-style: sticky;
+    
     width: 940px;
     padding: 17px;
-    margin-bottom: 45px;
+    margin-bottom: 30px;
     border: 1px solid #CDCDCD;
     margin-left:-41px;
     font-size: 40px;
     color:#000;
 }
+
+#registresanas_inputi button{
+    height: 100px;
+    width: 255px;
+    font-size: 40px;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 100;
+    line-height: normal; 
+    background-color: #0095B6;
+    
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 680px;
+    color: #000;
+}
+input::placeholder{
+    color: rgb(0, 0, 0);
+  }

@@ -2,13 +2,14 @@ body{
     background-color: #6457A6 ;
 }
 #page{
-    width: 100%;
+    display: flex;
+    width: 100vw;
     
     height: 180px;
     border-radius: 15px;
     background-color: #2E00AF;
-    margin-top: -980px;
-    
+    margin-top: -93vh;
+    flex-direction: row-reverse;
 }
 #startnavi{
     
@@ -151,3 +152,32 @@ input::placeholder{
 input::placeholder{
     color: rgb(0, 0, 0);
   }
+
+/* Iegājām iekšā - visi sludinājumi */
+
+#enter_background{
+    background-color: #7D7ABC;
+}
+
+.sludinajumu_parskats{
+    width: 86.791411vw;
+    height: 45.1vw;
+    background-color: #201274;
+    margin-left: 11vw;
+    margin-top: 4vw;
+    position: absolute;
+    bottom: 0;
+}
+.sidebar{
+    width: 10.5vw;
+    height: 25vw;
+    position: fixed;
+    background-color: #C0B6FF;
+    margin-top: 3.8vw;
+}
+
+.pievienot_rediget{
+    width: 65.9595959596vw;
+    height: 1vw;
+    background-color: #A900C5;
+}

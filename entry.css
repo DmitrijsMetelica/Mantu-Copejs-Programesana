@@ -1,0 +1,104 @@
+
+/* Te tiek veidota lapas dizains pēc IELOGOŠANAS */
+
+#main_entry_start{
+    width: 1600px;
+    min-height: 300px;
+    margin: 0 auto;
+}
+
+#top{
+    width: 1600px;
+    height: 150px;
+}
+#content{
+    width: 1600px;
+    min-height: 650px;
+}
+#foot{
+
+}
+
+#enter_background{
+    background-color: #7D7ABC;
+}
+.entry_mantu_copejs{
+    margin-left: 43px;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    float: left;
+    margin-top: 19px;
+}
+.sludinajumu_parskats{
+    position: relative;
+    width: 1440px;
+    height: 650px;
+    background-color: #201274;
+    margin-left: 9px;
+    float: left;
+    margin-top:-70px
+  
+}
+.sidebar{
+    position: relative;
+    width: 150px;
+    height: 650px;
+    background-color: #C0B6FF;
+    float: left;
+    margin-top: -70px;
+}
+
+.pievienot_rediget{
+    
+    display: flex;
+    width: 150px;
+    height: 50px;
+    
+    background-color: #A900C5;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin-top: 20px;
+    font-size: 14pt;
+    margin-right: -855px;
+    margin-left: 896px;
+}
+
+.entry_start_top{
+    height: 80px;
+    width:1600px;
+    
+}
+.vesture_enter{
+    margin-left: 108px;
+    display: flex;
+    width: 150px;
+    height: 50px;
+    
+    background-color: #1249ff;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin-top: 20px;
+    font-size: 14pt;
+
+}
+
+/* Sidebar filtrācija */
+
+#filt_nos{
+    display: flex;
+    width: 110px;
+    font-size: 32px;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+    list-style-type: none;
+    flex-direction: row-reverse;
+    margin: auto;
+    margin-top: 25px;
+}

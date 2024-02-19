@@ -12,6 +12,7 @@ body{
     flex-direction: row-reverse;
 }
 
+
 #startnavi{
     
     position: absolute;
@@ -152,71 +153,4 @@ input::placeholder{
 }
 input::placeholder{
     color: rgb(0, 0, 0);
-  }
-
-/* Iegājām iekšā - visi sludinājumi */
-
-#main_entry_start{
-    width: 1600px;
-    min-height: 300px;
-    margin: 0 auto;
-}
-
-#enter_background{
-    background-color: #7D7ABC;
-}
-
-.sludinajumu_parskats{
-    position: relative;
-    width: 1440px;
-    height: 650px;
-    background-color: #201274;
-    margin-left: 9px;
-    float: left;
-  
-}
-.sidebar{
-    position: relative;
-    width: 150px;
-    height: 650px;
-    background-color: #C0B6FF;
-    float: left;
-}
-
-.pievienot_rediget{
-    
-    display: flex;
-    width: 150px;
-    height: 50px;
-    padding: sticky;
-    background-color: #A900C5;
-    
-    border-radius: 40px;
-    justify-content: center;
-    align-items: center;
-    float: left;
-    margin-top: 20px;
-    margin-left: 3%;
-
-    font-size: 14pt;
-}
-
-.entry_start_top{
-    margin-left: 1200px;
-    height: 80px;
-    width:450px;
-    margin-top: -27px;
-}
-.vesture_enter{
-    display: flex;
-    width:150px;
-    height: 50px;
-
-    background-color: #A900C5;
-
-    border-radius: 40px;
-    justify-content: center;
-    align-items: center;
-    float: left;
-    margin-left:15px;
 }

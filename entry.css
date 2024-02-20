@@ -96,9 +96,46 @@
     font-size: 32px;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
+    /* background-color: aqua; */
     list-style-type: none;
     flex-direction: row-reverse;
     margin: auto;
-    margin-top: 25px;
+    margin-top: 13px;
+    margin-left: -17px;
+    color: #000;
+    font-weight: bold;
+}
+
+.entry_filtri{
+    display: flex;
+    list-style-type: none;
+    /* background-color: bisque; */
+    width: 150px;
+    text-align: left;
+    margin-left: -40px;
+    margin-top:9px;
+    text-decoration: none;
+    font-family: "PT Serif", serif;
+    color: #000;
+}
+.entry_filtri_zem{
+    list-style-type: none;
+    /* background-color: aquamarine; */
+    text-align: right;
+    font-family: "PT Serif", serif;
+    color: #000;
+    margin-right: 5px;
+}
+.entry_filtri_vel{
+    list-style-type: none;
+    text-align: left;
+    font-family: "PT Serif", serif;
+    /* background-color: #1249ff; */
+    margin-left: -40px;
+    margin-top: 9px;
+    text-decoration: none;
+    color: #000;
+}
+a:link{
+    text-decoration: none;
 }

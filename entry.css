@@ -44,14 +44,13 @@
 .sidebar{
     position: relative;
     width: 150px;
-    height: 650px;
+    height: 435px;
     background-color: #C0B6FF;
     float: left;
     margin-top: -70px;
 }
 
 .pievienot_rediget{
-    
     display: flex;
     width: 150px;
     height: 50px;
@@ -63,8 +62,10 @@
     float: left;
     margin-top: 20px;
     font-size: 14pt;
-    margin-right: -855px;
-    margin-left: 896px;
+}
+
+.pievienot_rediget:visited{
+    color: none;
 }
 
 .entry_start_top{
@@ -78,7 +79,7 @@
     width: 150px;
     height: 50px;
     
-    background-color: #1249ff;
+    background-color: #A900C5;
     border-radius: 40px;
     justify-content: center;
     align-items: center;
@@ -86,6 +87,9 @@
     margin-top: 20px;
     font-size: 14pt;
 
+}
+.vesture_enter:visited{
+    color:none;
 }
 
 /* Sidebar filtrācija */
@@ -138,4 +142,33 @@
 }
 a:link{
     text-decoration: none;
+}
+
+.copnesejs{
+    display: flex;
+    text-align: left;
+    align-items: center;
+
+    margin-top: 170px;
+    background-color: #031A6B;
+    color: #519872;
+    width: 150px;
+    height: 40px;
+    
+    
+    margin-left: -40px;
+}
+
+/* Ēdnīca zemfiltra veidošana */
+
+.ednica_zemkategorija{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    FONT-SIZE: 12pt;
+    width: 203px;
+    margin-right: 35px;
+    color: #CD00BC;
+    background-color: aquamarine;
+    float:left;
 }

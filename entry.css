@@ -62,6 +62,8 @@
     float: left;
     margin-top: 20px;
     font-size: 14pt;
+    margin-left: 917px;
+    margin-right: -897px;
 }
 
 .pievienot_rediget:visited{
@@ -165,10 +167,42 @@ a:link{
     display: flex;
     text-align: center;
     align-items: center;
-    FONT-SIZE: 12pt;
+    FONT-SIZE: 60pt;
     width: 203px;
     margin-right: 35px;
     color: #CD00BC;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     float:left;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+}
+.vesture_enter_zemkategorija{
+    margin-left: 108px;
+    display: flex;
+    width: 150px;
+    height: 50px;
+    background-color: #A900C5;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin-top: 20px;
+    font-size: 14pt;
+    margin-right: 425px;
+}
+.pievienot_rediget_zemkategorija{
+    display: flex;
+    width: 150px;
+    height: 50px;
+    background-color: #A900C5;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin-top: 20px;
+    font-size: 14pt;
+    margin-left: 254px;
+    margin-right: -234px;
 }

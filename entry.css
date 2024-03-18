@@ -164,11 +164,11 @@ a:link{
 /* Ēdnīca zemfiltra veidošana */
 
 .ednica_zemkategorija{
-    display: flex;
+    display: flow;
     text-align: center;
     align-items: center;
     FONT-SIZE: 60pt;
-    width: 203px;
+    width: 580px;
     margin-right: 35px;
     color: #CD00BC;
     /* background-color: aquamarine; */
@@ -190,7 +190,7 @@ a:link{
     float: left;
     margin-top: 20px;
     font-size: 14pt;
-    margin-right: 425px;
+    margin-right: 200px;
 }
 .pievienot_rediget_zemkategorija{
     display: flex;
@@ -203,6 +203,6 @@ a:link{
     float: left;
     margin-top: 20px;
     font-size: 14pt;
-    margin-left: 254px;
-    margin-right: -234px;
+    margin-left: 102px;
+    margin-right: -82px;
 }

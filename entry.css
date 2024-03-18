@@ -206,3 +206,66 @@ a:link{
     margin-left: 102px;
     margin-right: -82px;
 }
+
+/* Pazudēts vai nocopēts virsraksts uc. */
+.pazaudets_zemkategorija{
+    display: flow;
+    text-align: center;
+    align-items: center;
+    FONT-SIZE: 60pt;
+    width: 580px;
+    margin-right: 35px;
+    color: #fd0404;
+    /* background-color: aquamarine; */
+    float:left;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+}
+.nocopets_zemkategorija{
+    display: flow;
+    text-align: center;
+    align-items: center;
+    FONT-SIZE: 60pt;
+    width: 580px;
+    margin-right: 35px;
+    color: #00f00c;
+    /* background-color: aquamarine; */
+    float:left;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* dzēšanas lapa */
+.sidebar_dzesana{
+    position: relative;
+    width: 150px;
+    height: 50px;
+    background-color: #C0B6FF;
+    float: left;
+    
+}
+.dzest_sludinajumus{
+    display: flex;
+    width: 150px;
+    height: 50px;
+    background-color: #A900C5;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    margin-top: 20px;
+    font-size: 14pt;
+}
+.dzest_mantu_copejs{
+    margin-left: 18px;
+    display: flex;
+    width: 131px;
+    height: 131px;
+    border-radius: 40px;
+    float: left;
+    margin-top: 19px;  
+}

@@ -8,20 +8,17 @@ body{
     height: 180px;
     border-radius: 15px;
     background-color: #2E00AF;
-    margin-top: -93vh;
+    margin: auto;
     flex-direction: row-reverse;
 }
 
 
 #startnavi{
-    
-    position: absolute;
     display: flex;
-    right: 1000px;
     font-size: 120pt;
-    font-display: auto;
-    color: #CD00B9
-    
+    color: #CD00B9;
+    float:left;
+    margin-right:46px;
 }
 .firstPageButtons{
     color: #CDCDCD;
@@ -42,7 +39,7 @@ body{
 
 }
 img.start_mantu_copejs{
-    width: 40%;
+    width: 665px;
     margin: auto;
     display: block;
     

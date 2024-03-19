@@ -1,0 +1,59 @@
+body{
+    background-color: #6457A6;
+}
+#add_sludinajumi_kaste{
+    width: 1600px;
+    min-height: 700px;
+    margin: 0 auto;
+    background-color: aqua;
+}
+.add_logss{
+    width: 450px;
+    height: 600px;
+    float: right;
+    margin-top: 45px;
+    margin-right: 120px; 
+    background-color: #4B0085;
+}
+.piev_bildi{
+    width: 300px;
+    height: 300px;
+    background-color: #FFFFF1;
+    margin: auto;
+    margin-top:25px;
+}
+.ko_cope{
+    width: 300px;
+    height: 50px;
+    background-color: #95A6D1;
+    margin: auto;
+    margin-top: 10px;
+}
+.slud_apraksts{
+    width: 300px;
+    height: 100px;
+    background-color: #95A6D1;
+    margin: auto;
+    margin-top: 10px;
+}
+.atrasanas_vieta_add{
+    width: 125px;
+    height: 20px;
+    background-color: #95A6D1;
+    margin-top: 10px;
+    margin-left: 76px;
+}
+.statuss_add_slud{
+    width: 125px;
+    height: 20px;
+    background-color: #95A6D1;
+    float: inline-end;
+    margin-right: 76px;
+    margin-top: -20px;
+}
+.poga_add_sludinajums{
+    border-radius: 30px;
+    
+    background-color: #A900C5;
+
+}

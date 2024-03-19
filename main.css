@@ -110,6 +110,14 @@ input::placeholder{
     color: rgb(0, 0, 0);
   }
 
+.log_reg_mantu-copejs{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    margin-top: -147px;
+    margin-left: 377px;
+}
+
 /* Sākam veidot register page */
 
 #registresanas_inputi{

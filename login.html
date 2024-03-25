@@ -19,10 +19,10 @@
             <div id="ielogošanas">
                 
                 <div id = "ielogosanas_inputi">
-                    <form action="proc.php" method="POST">
-                        <input onchange="enableButton()" id= 'loginName' type="text" placeholder="Email:" name="email" required>
-                        <input onchange="enableButton()" id = 'loginPassword' placeholder="Password:" name="psw" required>
-                        <button id= 'login' disabled type="submit" class = "myButton">Login</button>
+                    <form action="login.php" method="post">
+                        <input  id= 'loginName' type="text" placeholder="Email:" name="email" required>
+                        <input  id = 'loginPassword' placeholder="Password:" name="password" required>
+                        <button  type="submit" class = "myButton">Login</button>
                     </form>
                 </div>
             </div>

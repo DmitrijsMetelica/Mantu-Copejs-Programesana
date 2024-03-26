@@ -11,9 +11,9 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Savienojuma neizdevās: " . mysqli_connect_error());
 } else {
-    echo "Savienojums veiksmīgs";
+     "Savienojums veiksmīgs";
 }
 
-// Norādām, ka izmantojam UTF-8 kodējumu
-mysqli_set_charset($conn, "utf8");
+// // Norādām, ka izmantojam UTF-8 kodējumu
+// mysqli_set_charset($conn, "utf8");
 ?>

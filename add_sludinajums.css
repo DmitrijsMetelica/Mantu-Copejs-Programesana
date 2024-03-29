@@ -5,7 +5,7 @@ body{
     width: 1600px;
     min-height: 700px;
     margin: 0 auto;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 .add_logss{
     width: 450px;
@@ -52,8 +52,12 @@ body{
     margin-top: -20px;
 }
 .poga_add_sludinajums{
+    display: flex;
+    width: 75px;
+    height: 30px;
     border-radius: 30px;
-    
     background-color: #A900C5;
+    justify-content: center;
+    text-align: center;
 
 }

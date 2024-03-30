@@ -23,18 +23,20 @@ body{
     margin-top:25px;
 }
 .ko_cope{
-    width: 300px;
+    width: 295px;
     height: 50px;
     background-color: #95A6D1;
     margin: auto;
     margin-top: 10px;
+    margin-left: 73px;
 }
 .slud_apraksts{
-    width: 300px;
+    width: 295px;
     height: 100px;
     background-color: #95A6D1;
     margin: auto;
     margin-top: 10px;
+    margin-left: 73px;
 }
 .atrasanas_vieta_add{
     width: 125px;
@@ -53,11 +55,13 @@ body{
 }
 .poga_add_sludinajums{
     display: flex;
+    justify-content: center;
+    align-items: center; 
     width: 75px;
     height: 30px;
     border-radius: 30px;
     background-color: #A900C5;
-    justify-content: center;
-    text-align: center;
+    margin-top: 20px;
+    margin-left: 300px;
 
 }

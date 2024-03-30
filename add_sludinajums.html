@@ -13,12 +13,16 @@
         <div class = "add_logss">
                 <div class = "piev_bildi">
                 </div>
-                <div class = "ko_cope">
-                    <Ko Copē?:>
-                </div>
-                <div class = "slud_apraksts">
-                    Apraksts:
-                </div>
+                <form action="add_slud.php" method="post">
+                    <div>
+                        <input class = "ko_cope" type="text" placeholder="Ko Copē?" name="slud_nos" required>
+                    </div>
+                </form>  
+                <form action="add_slud.php" method="post">
+                    <div>
+                        <input class = "slud_apraksts" type="text" placeholder="Apraksts:" name="slud_aprk." required>
+                    </div>
+                </form>  
                 <div class = "atrasanas_vieta_add">
                     Atrašanas vieta
                 </div>

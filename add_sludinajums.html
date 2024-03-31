@@ -6,34 +6,45 @@
     <title>Mantu copējs: Sludinājuma pievienošana</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='add_sludinajums.css'>
-    <script src='add_sludin.js'></script>
+    <script src='add_sludinajumi.js'></script>
 </head>
 <body>
-    <div id = "add_sludinajumi_kaste">
-        <div class = "add_logss">
-                <div class = "piev_bildi">
+    <div id="add_sludinajumi_kaste">
+        <img src="images/mantu copējs.png" class="log_add_slud">
+        <div class="add_logss">
+            <form id="uploadForm" action="add_slud.php" method="post" enctype="multipart/form-data">
+                <div class="piev_bildi">
+                    <p>Pievienojiet bildi</p>
+                    <input type="file" name="img_slud" id="fileInput" required>
                 </div>
-                <form action="add_slud.php" method="post">
-                    <div>
-                        <input class = "ko_cope" type="text" placeholder="Ko Copē?" name="slud_nos" required>
-                    </div>
-                </form>  
-                <form action="add_slud.php" method="post">
-                    <div>
-                        <input class = "slud_apraksts" type="text" placeholder="Apraksts:" name="slud_aprk." required>
-                    </div>
-                </form>  
-                <div class = "atrasanas_vieta_add">
-                    Atrašanas vieta
+                <div>
+                    <input class="ko_cope" type="text" placeholder="Ko Copē?" name="slud_nos" required>
                 </div>
-                <div class = "statuss_add_slud">
-                    Statuss
+                <div>
+                    <input class="slud_apraksts" type="text" placeholder="Apraksts:" name="slud_aprk" required>
                 </div>
-                <div class = "poga_add_sludinajums">
-                    Pievienot
+                <div>
+                    <select class="atrasanas_vieta_add" name="slud_vieta" required>
+                        <option>-Ēdnīca</option>
+                        <option>-Sporta centrs</option>
+                        <option>-A Korpuss</option>
+                        <option>-B Korpuss</option>
+                        <option>-Galvenā ēka</option>
+                        <option>-Skolas zāle</option>
+                        <option>-Cits</option>
+                    </select>
                 </div>
+                <div>
+                    <select class="statuss_add_slud" name="slud_status" required>
+                        <option class="izvelne_nozopets">-Nocopēts</option>
+                        <option class="izvelne-pazaudets">-Pazaudēts</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit" class="poga_add_sludinajums" name="submit">Pievienot</button>
+                </div>
+            </form>
         </div>
     </div>
-    
 </body>
 </html>

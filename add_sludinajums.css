@@ -15,12 +15,20 @@ body{
     margin-right: 120px; 
     background-color: #4B0085;
 }
-.piev_bildi{
+.piev_bildi {
     width: 300px;
     height: 300px;
     background-color: #FFFFF1;
     margin: auto;
-    margin-top:25px;
+    margin-top: 25px;
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+}
+#uploadedImage {
+    max-width: 100%;
+    max-height: 100%;
 }
 .ko_cope{
     width: 295px;
@@ -64,4 +72,16 @@ body{
     margin-top: 20px;
     margin-left: 300px;
 
+}
+.izvelne_nozopets{
+    color: #73FE44;
+}
+.izvelne_pazaudets{
+    color: #C30000;
+}
+.log_add_slud{
+    width: 550px;
+    height: 600px;
+    margin-top: 45px;
+    margin-left: 400px;
 }

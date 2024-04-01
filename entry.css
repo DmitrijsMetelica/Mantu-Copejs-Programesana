@@ -269,3 +269,39 @@ a:link{
     float: left;
     margin-top: 19px;  
 }
+
+/* sludinājumu pievienošana */
+.sludinajumu_parskats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sludinajums {
+    width: 235px; /* Mainiet šo vērtību, ja vēlaties mainīt sludinājumu platumu */
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sludinajums img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.sludinajums h2 {
+    font-size: 1.5pt;
+    margin-bottom: 5px;
+}
+
+.sludinajums p {
+    margin-bottom: 5px;
+    font-size: 1pt;
+}
+
+.sludinajums p strong {
+    font-weight: bold;
+}

@@ -56,7 +56,16 @@
             </div>  
             
             <div class = "sludinajumu_parskats">
-                trsjsrtj
+                <?php
+                require_once('db.php');
+
+                // Izvelkam datus no datubazes
+                $sql = "SELECT * FROM sludinajumi ORDER BY DESC";
+                $result = $connection->query($sql);
+                while ($row = $result->fetcha)
+
+                
+                ?>
             </div>
         </div>
 

@@ -14,7 +14,7 @@ if ($result) {
     // Pārbauda, vai atrasts lietotājs
     if ($result->num_rows > 0) {
         // Ja lietotājs ir atrasts, pārvirza uz nākamo lapu
-        header("Location: Entry_start.php");
+        header("Location: Entry_start.html");
         exit; // Lai pārliecinātos, ka skripts beidzas pēc pārvirzīšanas
     } else {
         // Ja lietotājs nav atrasts, veic pārvirzīšanu un izvada ziņojumu

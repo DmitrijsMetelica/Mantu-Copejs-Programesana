@@ -62,10 +62,10 @@
                 // Izvelkam datus no datubazes
                 $sql = "SELECT * FROM sludinajumi ORDER BY DESC";
                 $result = $connection->query($sql);
-                while ($row = $result->fetcha)
-
-                
-                ?>
+                while ($row = $result->fetch_assoc()){
+                    $show_img = base64_encode($row['img']);?>
+                    <img src="data:image/jpeg;base64, <?php echo $show_img ?>" alt="">
+                <?php } ?>
             </div>
         </div>
 

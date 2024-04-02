@@ -59,13 +59,14 @@
                 <?php
                 require_once('db.php');
 
-                <!-- // Izvelkam datus no datubazes -->
+                // Izvelkam datus no datubazes -->
                 $sql = "SELECT img FROM sludinajumi ORDER BY id DESC";
                 $result = $connection->query($sql);
                 while ($row = $result->fetch_assoc()){
-                    $show_img = base64_encode($row['img']);?>
-                    <img src="data:image/jpeg;base64, <?php echo $show_img ?>" alt="">
-                <?php } ?>
+                    $show_img = $row['img'];
+                    echo "<img src=uploads/$show_img />";
+                } 
+                ?>
             </div>
         </div>
 

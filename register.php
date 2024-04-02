@@ -19,7 +19,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         if ($dotCount === 1 || $dotCount === 2) {
             // Ja viss ir kārtībā, ievietojam datus datu bāzē
             $sql = "INSERT INTO user_datubase (uname, usname, email, password) VALUES ('$uname', '$usname', '$email', '$password')";
-            $result = $conn->query($sql);
+            $result = $connection->query($sql);
 
             if ($result) {
                 // Ja ieraksts veiksmīgi ievietots, izvadīt ziņojumu un pārnest uz index.html

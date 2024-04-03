@@ -55,17 +55,20 @@
                 </ul>
             </div>  
             
-            <div class = "sludinajumu_parskats">
+            <div class="sludinajumu_parskats">
                 <?php
                 require_once('db.php');
 
-                // Izvelkam datus no datubazes -->
-                $sql = "SELECT img FROM sludinajumi ORDER BY id DESC";
+                $sql = "SELECT img, ko_cope FROM sludinajumi ORDER BY id DESC";
                 $result = $connection->query($sql);
                 while ($row = $result->fetch_assoc()){
                     $show_img = $row['img'];
-                    echo "<img src=uploads/$show_img />";
-                } 
+                    $show_ko_cope = $row['ko_cope'];
+                    echo "<div class='sludinajums'>
+                            <div class='sludinajums img'><img src='uploads/$show_img' /></div>
+                            <div class='sludinajums nos.'>$show_ko_cope</div>
+                        </div>";
+                }
                 ?>
             </div>
         </div>

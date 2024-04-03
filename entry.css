@@ -274,22 +274,27 @@ a:link{
 .sludinajumu_parskats {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    
 }
 
 .sludinajums {
+    /* display: flex; */
     width: 235px; /* Mainiet šo vērtību, ja vēlaties mainīt sludinājumu platumu */
+    height: 250px;
     margin-bottom: 20px;
     padding: 10px;
-    background-color: #fff;
+    background-color: #479ad1;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    float: left;
 }
 
 .sludinajums img {
-    width: 100%;
+    width: 50px;
     border-radius: 8px;
     margin-bottom: 10px;
+    border-color: #030000 ;
+    background-color: #00f00c;
 }
 
 .sludinajums h2 {

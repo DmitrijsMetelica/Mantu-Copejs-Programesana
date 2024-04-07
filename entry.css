@@ -274,12 +274,10 @@ a:link{
 .sludinajumu_parskats {
     display: flex;
     flex-wrap: wrap;
-    
 }
 
 .sludinajums {
-    /* display: flex; */
-    width: 235px; /* Mainiet šo vērtību, ja vēlaties mainīt sludinājumu platumu */
+    width: 235px;
     height: 250px;
     margin-bottom: 20px;
     padding: 10px;
@@ -287,26 +285,65 @@ a:link{
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     float: left;
+    display: flex;
+    flex-direction: column;
 }
 
-.sludinajums img {
-    width: 50px;
+.sludinajums_img{
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #A900C5;
+}
+
+.sludinajums_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 10px;
-    border-color: #030000 ;
     background-color: #00f00c;
 }
 
-.sludinajums h2 {
-    font-size: 1.5pt;
-    margin-bottom: 5px;
+.sludinajums_info {
+    flex: 1;
+    background-color: #A900C5;
 }
 
-.sludinajums p {
-    margin-bottom: 5px;
-    font-size: 1pt;
-}
-
-.sludinajums p strong {
+.sludinajums_vieta {
+    display: flex;
+    float: right;
+    margin-right: 17px;
     font-weight: bold;
+    background-color: #A900C5;
 }
+
+.sludinajums_ko_cope {
+    display: flex;
+    text-align: start;
+    justify-content: flex-start;
+    margin-top: 5px;
+    height: 30px;
+    margin-bottom: 5px;
+    font-size: 1em;
+    background-color: #007fc5;
+    
+}
+
+.sludinajums_apraksts {
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    height: 42px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    background-color: #00c57d;
+}
+
+.sludinajums_statuss {
+    margin-left: auto;
+    font-style: italic;
+    background-color: #A900C5;
+}
+

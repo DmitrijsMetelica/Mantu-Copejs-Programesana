@@ -59,18 +59,27 @@
                 <?php
                 require_once('db.php');
 
-                $sql = "SELECT img, ko_cope FROM sludinajumi ORDER BY id DESC";
+                $sql = "SELECT img, ko_cope, apraksts, statuss, vieta FROM sludinajumi ORDER BY id DESC";
                 $result = $connection->query($sql);
                 while ($row = $result->fetch_assoc()){
                     $show_img = $row['img'];
                     $show_ko_cope = $row['ko_cope'];
+                    $show_apraksts = $row['apraksts'];
+                    $show_statuss = $row['statuss'];
+                    $show_vieta = $row['vieta'];
                     echo "<div class='sludinajums'>
-                            <div class='sludinajums img'><img src='uploads/$show_img' /></div>
-                            <div class='sludinajums nos.'>$show_ko_cope</div>
+                            <div class='sludinajums_img'><img src='uploads/$show_img' /></div>
+                            <div class='sludinajums_info'>
+                                <div class='sludinajums_ko_cope'>$show_ko_cope</div>
+                                <div class='sludinajums_apraksts'>$show_apraksts</div>
+                                <div class='sludinajums_statuss'>$show_statuss</div>
+                                <div class='sludinajums_vieta'>$show_vieta</div>
+                            </div>
                         </div>";
                 }
                 ?>
             </div>
+
         </div>
 
     </div>

@@ -1,41 +1,61 @@
 <?php
-require_once('db.php');
+// Pārbaudam, vai forma iesniegta un vai ir veikta augšupielāde
+if(isset($_POST['submit']) && isset($_FILES['img_slud'])) {
+    // Pārliecinamies, ka datu bāzes savienojums ir izveidots
+    require_once('db.php');
 
-// Pārbaude, vai forma iesniegta
-if(isset($_POST['submit'])){
-    // Pārbaude, vai img_slud definēts POST pieprasījumā
-    if(isset($_POST['img_slud'])) {
-        $img = $_POST['img_slud'];
-    } else {
-        $img = null;
-    }
-
-    // Iegūstam citus POST dati
+    // Iegūstam POST datus
     $ko_cope = $_POST['slud_nos'];
     $slud_apr = $_POST['slud_aprk'];
     $vieta = $_POST['slud_vieta'];
     $statuss = $_POST['slud_status'];
 
-    // Pārbaude, vai faila ielāde notiek pareizi
-    if(!empty($_FILES['img_slud']['tmp_name'])) {
-        $img = addslashes(file_get_contents($_FILES['img_slud']['tmp_name']));
-    }
-
-    // Veidojam SQL vaicājumu
-    $sql = "INSERT INTO sludinajumi (img, ko_cope, apraksts, vieta, statuss) VALUES ('$img', '$ko_cope', '$slud_apr', '$vieta', '$statuss')";
-
+    // Veidojam SQL vaicājumu, lai ievietotu jaunu sludinājumu
+    $sql_insert = "INSERT INTO sludinajumi (ko_cope, apraksts, vieta, statuss) VALUES ('$ko_cope', '$slud_apr', '$vieta', '$statuss')";
+    
     // Izpildam SQL vaicājumu
-    if ($connection->query($sql) === TRUE) {
-        // Ja veiksmīgi pievienots, izvadam ziņojumu un pārsūtam uz Entry_start.html
-        echo "<script>alert('Sludinājums veiksmīgi pievienots'); window.location='Entry_start.html';</script>";
+    if ($connection->query($sql_insert) === TRUE) {
+        // Iegūstam jaunā sludinājuma ID
+        $last_id = $connection->insert_id;
+        
+        // Pārbaudam, vai faila ielāde notiek pareizi
+        if(!empty($_FILES['img_slud']['tmp_name'])) {
+            // Mape, kur saglabāt bildes
+            $upload_directory = "uploads/";
+
+            // Iegūstam faila paplašinājumu
+            $file_extension = pathinfo($_FILES['img_slud']['name'], PATHINFO_EXTENSION);
+
+            // Jauni nosaukums bildes failam ar sludinājuma ID
+            $new_filename = $last_id . "." . $file_extension;
+
+            // Ceļš uz jauno bildes failu
+            $upload_path = $upload_directory . $new_filename;
+
+            // Pārvieto bildi uz uploads mapi ar jaunu nosaukumu
+            if(move_uploaded_file($_FILES['img_slud']['tmp_name'], $upload_path)) {
+                // Atjaunojam datubāzes ierakstu ar bildes nosaukumu
+                $sql_update = "UPDATE sludinajumi SET img='$new_filename' WHERE id='$last_id'";
+                if ($connection->query($sql_update) === TRUE) {
+                    // Ja veiksmīgi pievienots, izvadam ziņojumu un pārsūtam uz Entry_start.php
+                    echo "<script>alert('Sludinājums veiksmīgi pievienots'); window.location='Entry_start.php';</script>";
+                } else {
+                    echo "<script>alert('Nosludēt neizdevās'); window.location='add_sludinajums.html';</script>";
+                }
+            } else {
+                // "Nebija iespējams augšupielādēt bildi"
+                echo "<script>alert('Nosludēt neizdevās'); window.location='add_sludinajums.html';</script>";
+            }
+        } else {
+            echo "<script>alert('Bilde nav norādīta'); window.location='add_sludinajums.html';</script>";
+        }
     } else {
-        // Ja neizdevās, izvadam kļūdas ziņojumu un pārsūtam uz add_sludinajums.html
-        echo "Nosludēt neizdevās - mēģiniet vēlreiz";
-        header("Location: add_sludinajums.html");
-        exit();
+        echo "<script>alert('Nosludēt neizdevās'); window.location='add_sludinajums.html';</script>";
     }
 
     // Aizvērt savienojumu ar datubāzi
     $connection->close();
+} else {
+    echo "<script>alert('Forma nav pareizi iesniegta vai nav norādīta bilde'); window.location='add_sludinajums.html';</script>";
 }
 ?>

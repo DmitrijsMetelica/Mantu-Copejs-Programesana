@@ -33,17 +33,17 @@
                 </ul>
                 <ul>
                     <a href = ""><li class = "entry_filtri">-Visi sludinājumi</li></a>
-                    <a href = "mani-sludinajumi.html"><li class = "entry_filtri">-Mani Sludinājumi</li></a>
+                    <a href = "mani-sludinajumi.php"><li class = "entry_filtri">-Mani Sludinājumi</li></a>
                     <a<li class = "entry_filtri">-Nocopēšanas / pazaudēšanas vieta:</li></a>
                 </ul>
                 <ul>
-                    <a href = "filtrs_ednica.html"><li class = "entry_filtri_zem">-Ēdnīca</li></a>
-                    <a href = "filtrs_sporta-centrs.html"><li class = "entry_filtri_zem">-Sporta centrs</li></a>
-                    <a href = "filtrs_a-korpuss.html"><li class = "entry_filtri_zem">-A Korpuss</li></a>
-                    <a href = "filtrs_b-korpuss.html"><li class = "entry_filtri_zem">-B Korpuss</li></a>
-                    <a href = "filtrs_galvena-eka.html"><li class = "entry_filtri_zem">-Galvenā ēka</li></a>
-                    <a href = "filtrs_skolas-zale.html"><li class = "entry_filtri_zem">-Skolas zāle</li></a>
-                    <a href = "filtrs_cits.html"><li class = "entry_filtri_zem">-Cits</li></a>
+                    <a href = "filtrs_ednica.php"><li class = "entry_filtri_zem">-Ēdnīca</li></a>
+                    <a href = "filtrs_sporta-centrs.php"><li class = "entry_filtri_zem">-Sporta centrs</li></a>
+                    <a href = "filtrs_a-korpuss.php"><li class = "entry_filtri_zem">-A Korpuss</li></a>
+                    <a href = "filtrs_b-korpuss.php"><li class = "entry_filtri_zem">-B Korpuss</li></a>
+                    <a href = "filtrs_galvena-eka.php"><li class = "entry_filtri_zem">-Galvenā ēka</li></a>
+                    <a href = "filtrs_skolas-zale.php"><li class = "entry_filtri_zem">-Skolas zāle</li></a>
+                    <a href = "filtrs_cits.php"><li class = "entry_filtri_zem">-Cits</li></a>
                 </ul>
                 <ul>
                     <a href = "pec_alfabeta.html"><li class = "entry_filtri_vel">-Pēc Alfabēta</li></a>

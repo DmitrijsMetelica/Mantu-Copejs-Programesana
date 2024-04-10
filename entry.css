@@ -277,8 +277,8 @@ a:link{
 }
 
 .sludinajums {
-    width: 235px;
-    height: 250px;
+    width: 250px;
+    height: 290px;
     margin-bottom: 20px;
     padding: 10px;
     background-color: #479ad1;
@@ -308,15 +308,16 @@ a:link{
 
 .sludinajums_info {
     flex: 1;
-    background-color: #A900C5;
+    /* background-color: #A900C5; */
 }
 
 .sludinajums_vieta {
     display: flex;
     float: right;
-    margin-right: 17px;
+    margin-right: 20px;
     font-weight: bold;
-    background-color: #A900C5;
+    background-color: #c1cdd4;
+    margin-top: 7px;
 }
 
 .sludinajums_ko_cope {
@@ -335,15 +336,25 @@ a:link{
     display: flex;
     justify-content: flex-start;
     text-align: center;
-    height: 42px;
+    height: 82px;
     margin-bottom: 5px;
     font-size: 0.9em;
-    background-color: #00c57d;
+    background-color: #7D7ABC;
 }
 
 .sludinajums_statuss {
-    margin-left: auto;
+    display: inline-flex;
     font-style: italic;
-    background-color: #A900C5;
+    width: 85px;
+    margin-left: 20px;
+    margin-top: 7px;
+}
+.sludinajums_statuss.green {
+    background-color: #73FE44;
+}
+
+/* Fona krāsa, ja statuss ir 'Pazaudēts' */
+.sludinajums_statuss.red {
+    background-color: #C30000;
 }
 

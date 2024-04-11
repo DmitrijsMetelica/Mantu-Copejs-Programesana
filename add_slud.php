@@ -1,19 +1,17 @@
 <?php
 // Pārbaudam, vai forma iesniegta un vai ir veikta augšupielāde
 if(isset($_POST['submit']) && isset($_FILES['img_slud'])) {
-    // Pārliecinamies, ka datu bāzes savienojums ir izveidots
+    
     require_once('db.php');
 
-    // Iegūstam POST datus
+    
     $ko_cope = $_POST['slud_nos'];
     $slud_apr = $_POST['slud_aprk'];
     $vieta = $_POST['slud_vieta'];
     $statuss = $_POST['slud_status'];
 
-    // Veidojam SQL vaicājumu, lai ievietotu jaunu sludinājumu
     $sql_insert = "INSERT INTO sludinajumi (ko_cope, apraksts, vieta, statuss) VALUES ('$ko_cope', '$slud_apr', '$vieta', '$statuss')";
     
-    // Izpildam SQL vaicājumu
     if ($connection->query($sql_insert) === TRUE) {
         // Iegūstam jaunā sludinājuma ID
         $last_id = $connection->insert_id;
@@ -53,7 +51,6 @@ if(isset($_POST['submit']) && isset($_FILES['img_slud'])) {
         echo "<script>alert('Nosludēt neizdevās'); window.location='add_sludinajums.html';</script>";
     }
 
-    // Aizvērt savienojumu ar datubāzi
     $connection->close();
 } else {
     echo "<script>alert('Forma nav pareizi iesniegta vai nav norādīta bilde'); window.location='add_sludinajums.html';</script>";

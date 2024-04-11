@@ -291,7 +291,7 @@ a:link{
 }
 
 .sludinajums_img{
-    height: 125px;
+    height: 137px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -302,9 +302,9 @@ a:link{
 .sludinajums_img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: inherit;
     border-radius: 8px;
-    background-color: #00f00c;
+    background-color: #e9faea;
 }
 
 .sludinajums_info {

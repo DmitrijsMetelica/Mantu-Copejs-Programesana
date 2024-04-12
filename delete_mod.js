@@ -19,7 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    deleteButton.addEventListener('click', function() {
+    deleteButton.addEventListener('click', function(e) {
+        e.preventDefault(); // Novēršam noklusējuma formas iesniegšanu
+
         const sludinajumiToDelete = [];
         deleteCheckboxes.forEach(function(checkbox) {
             if (checkbox.checked) {
@@ -28,23 +30,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         if (sludinajumiToDelete.length > 0) {
-            // Veic AJAX pieprasījumu, lai dzēstu sludinājumus
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'rediget_dzesana.php', true);
-            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    console.log(xhr.responseText); // Atgrieztā atbilde no servera
-                    // Ja veiksmīgi, atjaunojiet klienta pusi
-                    location.reload();
-                } else {
-                    console.error('Radās kļūda:', xhr.statusText);
-                }
-            };
-            xhr.onerror = function() {
-                console.error('AJAX pieprasījuma kļūda');
-            };
-            xhr.send('sludinajums_id=' + sludinajumiToDelete.join('&sludinajums_id='));
+            const deleteForm = document.getElementById('deleteForm');
+            const sludinajumsIdInput = document.createElement('input');
+            sludinajumsIdInput.setAttribute('type', 'hidden');
+            sludinajumsIdInput.setAttribute('name', 'sludinajums_id');
+            sludinajumsIdInput.setAttribute('value', sludinajumiToDelete.join(','));
+
+            deleteForm.appendChild(sludinajumsIdInput);
+
+            deleteForm.submit(); // Iesniedzam formu, lai nosūtītu dzēšanas pieprasījumu
         } else {
             console.log('Nav atlasīts neviens sludinājums dzēšanai.');
         }

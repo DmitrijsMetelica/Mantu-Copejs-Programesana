@@ -17,7 +17,9 @@
     <div id="main_entry_start">
         <div id="top">
             <div class="entry_start_top">
-                <img src="images/mantu copējs.png" class = "entry_mantu_copejs">
+                <a href="index.html">
+                    <img src="images/mantu copējs.png" class="entry_mantu_copejs">
+                </a>
                 <ul>
                     <a href = ""><li class = "vesture_enter">VĒSTURE</li></a>
                     <a href = "add_sludinajums.html"><li class = "pievienot_rediget">PIEVIENOT</li></a>

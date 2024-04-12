@@ -15,9 +15,9 @@
     width: 1600px;
     min-height: 650px;
 }
-#foot{
+/* #foot{
 
-}
+} */
 
 #enter_background{
     background-color: #7D7ABC;
@@ -34,7 +34,7 @@
 .sludinajumu_parskats{
     position: relative;
     width: 1440px;
-    height: 650px;
+    min-height: 650px;
     background-color: #201274;
     margin-left: 9px;
     float: left;
@@ -278,7 +278,7 @@ input[type="checkbox" i] {
     margin: 3px 3px 3px 4px;
     padding: initial;
     border: initial;
-    margin-left: 180px;
+    margin-left: 179px;
 }
 
 /* sludinājumu pievienošana */

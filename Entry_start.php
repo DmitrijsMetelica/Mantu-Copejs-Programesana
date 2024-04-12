@@ -21,7 +21,7 @@
                 <ul>
                     <a href = ""><li class = "vesture_enter">VĒSTURE</li></a>
                     <a href = "add_sludinajums.html"><li class = "pievienot_rediget">PIEVIENOT</li></a>
-                    <a href = "rediget_dzesana.html"><li class = "pievienot_rediget">REDIĢĒT</li></a>
+                    <a href = "rediget_dzesana.php"><li class = "pievienot_rediget">REDIĢĒT</li></a>
                     
                 </ul>
             </div>
@@ -46,9 +46,9 @@
                     <a href = "filtrs_cits.php"><li class = "entry_filtri_zem">-Cits</li></a>
                 </ul>
                 <ul>
-                    <a href = "pec_alfabeta.html"><li class = "entry_filtri_vel">-Pēc Alfabēta</li></a>
-                    <a href = "nocopets.html"><li class = "entry_filtri_vel">-Nocopēts</li></a>
-                    <a href = "pazaudets.html"><li class = "entry_filtri_vel">-Pazaudēts</li></a>
+                    <a href = "pec_alfabeta.php"><li class = "entry_filtri_vel">-Pēc Alfabēta</li></a>
+                    <a href = "nocopets.php"><li class = "entry_filtri_vel">-Nocopēts</li></a>
+                    <a href = "pazaudets.php"><li class = "entry_filtri_vel">-Pazaudēts</li></a>
                 </ul>
                 <ul>
                     <li class = "copnesejs">Copnesējs:</li>

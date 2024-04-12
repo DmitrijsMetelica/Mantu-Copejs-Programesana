@@ -270,6 +270,17 @@ a:link{
     margin-top: 19px;  
 }
 
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+    margin-left: 180px;
+}
+
 /* sludinājumu pievienošana */
 .sludinajumu_parskats {
     display: flex;
@@ -361,4 +372,7 @@ a:link{
 .sludinajums_statuss.red {
     background-color: #C30000;
 }
+
+
+
 

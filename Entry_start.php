@@ -7,7 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='entry.css'>
-    <script src='main.js'></script>
+    <script src='start.js'></script>
     
 </head>
 <style>
@@ -73,7 +73,10 @@
                             </ul>";
                     }
                 }
+
                 ?>
+
+
 
                 
             </div>  
@@ -82,33 +85,42 @@
             <?php
             require_once('db.php');
 
-            $sql = "SELECT img, ko_cope, apraksts, statuss, vieta FROM sludinajumi ORDER BY id DESC";
+            $sql = "SELECT id, img, ko_cope, apraksts, statuss, vieta FROM sludinajumi ORDER BY id DESC";
             $result = $connection->query($sql);
-            while ($row = $result->fetch_assoc()){
-                $show_img = $row['img'];
-                $show_ko_cope = $row['ko_cope'];
-                $show_apraksts = $row['apraksts'];
-                $show_statuss = $row['statuss'];
-                $show_vieta = $row['vieta'];
-                $status_class = '';
+            if ($result) {
+                while ($row = $result->fetch_assoc()){
+                    $sludinajums_id = $row['id']; // Pārbauda, vai `id` indekss ir pieejams pirms tā izmantošanas
+                    $show_img = $row['img'];
+                    $show_ko_cope = $row['ko_cope'];
+                    $show_apraksts = $row['apraksts'];
+                    $show_statuss = $row['statuss'];
+                    $show_vieta = $row['vieta'];
+                    $status_class = '';
 
-                if ($show_statuss == '-Nocopēts') {
-                    $status_class = 'green'; 
-                } elseif ($show_statuss == '-Pazaudēts') {
-                    $status_class = 'red'; 
+                    if ($show_statuss == '-Nocopēts') {
+                        $status_class = 'green'; 
+                    } elseif ($show_statuss == '-Pazaudēts') {
+                        $status_class = 'red'; 
+                    }
+
+                    echo "<div class='sludinajums'>
+                            <div class='sludinajums_img'><img src='uploads/$show_img' /></div>
+                            <div class='sludinajums_info'>
+                                <div class='sludinajums_ko_cope'>$show_ko_cope</div>
+                                <div class='sludinajums_apraksts'>$show_apraksts</div>
+                                <div class='sludinajums_statuss $status_class'>$show_statuss</div>
+                                <div class='sludinajums_vieta'>$show_vieta</div>
+                                <div class='skatit_sludinajumu'>
+                                <button  data-sludinajums-id='$sludinajums_id'>Skatīt</button>
+                                </div>
+                            </div>
+                        </div>";
                 }
-
-                echo "<div class='sludinajums'>
-                        <div class='sludinajums_img'><img src='uploads/$show_img' /></div>
-                        <div class='sludinajums_info'>
-                            <div class='sludinajums_ko_cope'>$show_ko_cope</div>
-                            <div class='sludinajums_apraksts'>$show_apraksts</div>
-                            <div class='sludinajums_statuss $status_class'>$show_statuss</div>
-                            <div class='sludinajums_vieta'>$show_vieta</div>
-                        </div>
-                    </div>";
+            } else {
+                echo "Kļūda: " . $connection->error; // Parāda kļūdas ziņojumu, ja pieprasījums nav izdevies
             }
             ?>
+
             </div>
 
         </div>

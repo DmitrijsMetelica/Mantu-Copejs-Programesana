@@ -21,8 +21,8 @@
                 <ul>
                     <a href = ""><li class = "vesture_enter_zemkategorija">VĒSTURE</li></a>
                     <a><li class = "ednica_zemkategorija">Sporta centrs</li></a>
-                    <a href = ""><li class = "pievienot_rediget_zemkategorija">PIEVIENOT</li></a>
-                    <a href = "rediget_dzesana.html"><li class = "pievienot_rediget_zemkategorija">REDIĢĒT</li></a>
+                    <a href = "add_sludinajums.html"><li class = "pievienot_rediget_zemkategorija">PIEVIENOT</li></a>
+                    <a href = "rediget_dzesana.php"><li class = "pievienot_rediget_zemkategorija">REDIĢĒT</li></a>
                     
                 </ul>
             </div>
@@ -33,8 +33,8 @@
                     <li>Filtrācija</li>
                 </ul>
                 <ul>
-                    <a href = "Entry_start.html"><li class = "entry_filtri">-Visi sludinājumi</li></a>
-                    <a href = "mani-sludinajumi.html"><li class = "entry_filtri">-Mani Sludinājumi</li></a>
+                    <a href = "Entry_start.php"><li class = "entry_filtri">-Visi sludinājumi</li></a>
+                    <a href = "mani-sludinajumi.php"><li class = "entry_filtri">-Mani Sludinājumi</li></a>
                     
                 </ul>
                 
@@ -42,7 +42,36 @@
             </div>  
             
             <div class = "sludinajumu_parskats">
-                
+            <?php
+            require_once('db.php');
+
+            $sql = "SELECT img, ko_cope, apraksts, statuss, vieta FROM sludinajumi WHERE vieta = '-Sporta centrs' ORDER BY id DESC";
+            $result = $connection->query($sql);
+            while ($row = $result->fetch_assoc()){
+                $show_img = $row['img'];
+                $show_ko_cope = $row['ko_cope'];
+                $show_apraksts = $row['apraksts'];
+                $show_statuss = $row['statuss'];
+                $show_vieta = $row['vieta'];
+                $status_class = '';
+
+                if ($show_statuss == '-Nocopēts') {
+                    $status_class = 'green'; 
+                } elseif ($show_statuss == '-Pazaudēts') {
+                    $status_class = 'red'; 
+                }
+
+                echo "<div class='sludinajums'>
+                        <div class='sludinajums_img'><img src='uploads/$show_img' /></div>
+                        <div class='sludinajums_info'>
+                            <div class='sludinajums_ko_cope'>$show_ko_cope</div>
+                            <div class='sludinajums_apraksts'>$show_apraksts</div>
+                            <div class='sludinajums_statuss $status_class'>$show_statuss</div>
+                            <div class='sludinajums_vieta'>$show_vieta</div>
+                        </div>
+                    </div>";
+            }
+            ?>
             </div>
         </div>
 

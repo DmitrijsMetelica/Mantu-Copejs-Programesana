@@ -7,18 +7,17 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='entry.css'>
-    <script src='delete_mod.js'></script>
-    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Roboto+Condensed:ital,wght@1,700&display=swap');
+    </style>
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Roboto+Condensed:ital,wght@1,700&display=swap');
-</style>
 <body id="enter_background">
     <div id="main_entry_start">
         <div id="top">
             <div class="entry_start_top">
                 <img src="images/mantu copējs.png" class="dzest_mantu_copejs">
-                <button type="submit" class="dzest_sludinajumus">Dzēst</button>;
+                <a><li class = "dzesana_nedarbojas">TEHNISKU IEMESLU DĒĻ NEDARBOJAS!</li></a>
+                <button type="button" class="dzest_sludinajumus">Dzēst</button>;
             </div>
         </div>
         <div id="content">
@@ -83,5 +82,60 @@
             </form>
         </div>
     </div>
+    <script src='delete_mod.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteCheckboxes = document.querySelectorAll('.deleteCheckbox');
+            const deleteButton = document.querySelector('.dzest_sludinajumus');
+
+            deleteCheckboxes.forEach(function(checkbox) {
+                checkbox.addEventListener('change', function() {
+                    let anyChecked = false;
+                    deleteCheckboxes.forEach(function(checkbox) {
+                        if (checkbox.checked) {
+                            anyChecked = true;
+                        }
+                    });
+
+                    if (anyChecked) {
+                        deleteButton.style.display = 'block';
+                    } else {
+                        deleteButton.style.display = 'none';
+                    }
+                });
+            });
+
+            deleteButton.addEventListener('click', function(e) {
+                e.preventDefault(); // Novēršam noklusējuma formas iesniegšanu
+
+                console.log("Delete button clicked"); // Pārbauda, vai pogas klausītājs tiek aktivizēts pareizi
+
+                const sludinajumiToDelete = [];
+                deleteCheckboxes.forEach(function(checkbox) {
+                    if (checkbox.checked) {
+                        sludinajumiToDelete.push(checkbox.dataset.sludinajumsId);
+                    }
+                });
+
+                console.log("Sludinajumi to delete:", sludinajumiToDelete); // Pārbauda, vai atzīmētie sludinājumi tiek pareizi identificēti
+
+                if (sludinajumiToDelete.length > 0) {
+                    const deleteForm = document.getElementById('deleteForm');
+                    const sludinajumsIdInput = document.createElement('input');
+                    sludinajumsIdInput.setAttribute('type', 'hidden');
+                    sludinajumsIdInput.setAttribute('name', 'sludinajums_id');
+                    sludinajumsIdInput.setAttribute('value', sludinajumiToDelete.join(','));
+
+                    deleteForm.appendChild(sludinajumsIdInput);
+
+                    console.log("Deleting sludinajumi..."); // Paziņo, ka notiek sludinājumu dzēšana
+
+                    deleteForm.submit(); // Iesniedzam formu, lai nosūtītu dzēšanas pieprasījumu
+                } else {
+                    console.log('Nav atlasīts neviens sludinājums dzēšanai.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -52,9 +52,30 @@
                     <a href = "nocopets.php"><li class = "entry_filtri_vel">-Nocopēts</li></a>
                     <a href = "pazaudets.php"><li class = "entry_filtri_vel">-Pazaudēts</li></a>
                 </ul>
-                <ul>
-                    <li class = "copnesejs">Copnesējs:</li>
-                </ul>
+                <?php
+                require_once('db.php');
+
+                if (session_status() == PHP_SESSION_NONE) {
+                    session_start();
+                }
+
+                if (isset($_SESSION['user_id'])) {
+                    $user_id = $_SESSION['user_id'];
+
+                    $sql = "SELECT uname FROM user_datubase WHERE id = $user_id";
+                    $result = $connection->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        $user_name = $row['uname'];
+                        echo "<ul>
+                                <li class='copnesejs'>Copnesējs: $user_name</li>
+                            </ul>";
+                    }
+                }
+                ?>
+
+                
             </div>  
             
             <div class="sludinajumu_parskats">

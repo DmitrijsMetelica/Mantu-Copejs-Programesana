@@ -156,6 +156,7 @@ a:link{
     color: #519872;
     width: 150px;
     height: 40px;
+    overflow: hidden;
     
     
     margin-left: -40px;

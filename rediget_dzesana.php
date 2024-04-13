@@ -32,18 +32,22 @@
                     <?php
                     require_once('db.php');
 
-                    // Pārbauda, vai GET pieprasījumā ir norādīts lietotāja ID
-                    if (isset($_GET['user_id'])) {
-                        $user_id = $_GET['user_id'];
-
-                        // SQL vaicājums, lai atlasītu sludinājumus no konkrētā lietotāja
-                        $sql = "SELECT id, img, ko_cope, apraksts, statuss, vieta FROM sludinajumi WHERE user_id = $user_id ORDER BY id DESC";
-                    } else {
-                        // Ja nav norādīts lietotāja ID, tiek atgriezti visi sludinājumi
-                        $sql = "SELECT id, img, ko_cope, apraksts, statuss, vieta FROM sludinajumi ORDER BY id DESC";
+                    if (session_status() == PHP_SESSION_NONE) {
+                        session_start();
                     }
 
+                    // Kādam gadījumam...
+                    if (!isset($_SESSION['user_id'])) {
+                        echo "<script>alert('Lietotājs nav ielogojies'); window.location='login.html';</script>";
+                        exit;
+                    }
+                    
+                    $user_id = $_SESSION['user_id'];
+                    
+                    $sql = "SELECT id, img, ko_cope, apraksts, statuss, vieta FROM sludinajumi WHERE owner_id = $user_id ORDER BY id DESC";
+                    
                     $result = $connection->query($sql);
+                    
                     while ($row = $result->fetch_assoc()){
                         $sludinajums_id = $row['id'];
                         $show_img = $row['img'];

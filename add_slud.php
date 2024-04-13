@@ -4,13 +4,16 @@ if(isset($_POST['submit']) && isset($_FILES['img_slud'])) {
     
     require_once('db.php');
 
-    
+    // Iegūstam ielogotā lietotāja ID no sesijas
+    session_start();
+    $owner_id = $_SESSION['user_id']; // Pielāgojiet šo sesijas atslēgu, ja nepieciešams
+
     $ko_cope = $_POST['slud_nos'];
     $slud_apr = $_POST['slud_aprk'];
     $vieta = $_POST['slud_vieta'];
     $statuss = $_POST['slud_status'];
 
-    $sql_insert = "INSERT INTO sludinajumi (ko_cope, apraksts, vieta, statuss) VALUES ('$ko_cope', '$slud_apr', '$vieta', '$statuss')";
+    $sql_insert = "INSERT INTO sludinajumi (ko_cope, apraksts, vieta, statuss, owner_id) VALUES ('$ko_cope', '$slud_apr', '$vieta', '$statuss', '$owner_id')";
     
     if ($connection->query($sql_insert) === TRUE) {
         // Iegūstam jaunā sludinājuma ID

@@ -47,6 +47,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (xhr.status === 200) {
                     console.log("Sludinājums pārvietots veiksmīgi!");
                     closeModal();
+                    // Optionally, you can reload the page or update the UI here
+                } else {
+                    console.error("Kļūda pārvietojot sludinājumu!");
+                }
+            }
+        };
+        xhr.open("POST", "move_sludinajums.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send("sludinajumsId=" + sludinajumsId);
+    }
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtons = document.querySelectorAll('.copyButton');
+
+    copyButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const sludinajumsId = button.dataset.sludinajumsId;
+            moveSludinajums(sludinajumsId);
+        });
+    });
+
+    function moveSludinajums(sludinajumsId) {
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    console.log(xhr.responseText);
+                    // Optionally, you can reload the page or update the UI here
                 } else {
                     console.error("Kļūda pārvietojot sludinājumu!");
                 }

@@ -7,7 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='entry.css'>
-    <script src='main.js'></script>
+    <script src='mani_sludinajumi.js'></script>
     
 </head>
 <style>
@@ -83,6 +83,9 @@
                                         <div class='sludinajums_apraksts'>$show_apraksts</div>
                                         <div class='sludinajums_statuss $status_class'>$show_statuss</div>
                                         <div class='sludinajums_vieta'>$show_vieta</div>
+                                        <div class='skatit_sludinajumu'>
+                                        <button  data-sludinajums-id='$sludinajums_id'>Skatīt</button>
+                                        </div>
                                     </div>
                                 </div>";
                     }

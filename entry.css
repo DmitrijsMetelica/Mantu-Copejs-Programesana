@@ -399,8 +399,34 @@ input[type="checkbox" i] {
 }
 
 
+/* izlecošais logs - skatīt */
+.modal {
+    position: fixed; /* Lai modālais logs paliek pie fiksētas lapas pozīcijas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Puscaurspīdīgs fons, lai uzmanību pievērstu modālajam logam */
+    z-index: 9999; /* Augsts z-indeks, lai logu parādītu virs visiem pārējiem elementiem */
+    display: flex; /* Izvieto bērnu elementus flex konteinerī */
+    justify-content: center; /* Horizontāla centrēšana */
+    align-items: center; /* Vertikāla centrēšana */
+}
 
-
+.modal-content {
+    background-color: #47e4ff;  /* Fona krāsa modālajam logam */
+    padding: 20px; /* Ievietojums ap saturu */
+    border-radius: 8px; /* Apaļo stūrus */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* ēna efekts */
+    z-index: 10000; /* Augsts z-indeks, lai modālais logs būtu virsā */
+}
+.atpakalButton{
+    margin-left: 15px;
+}
+.copyButton{
+    margin-left: 60px;
+    background-color: rgb(0, 180, 96);
+}
 
 
 
@@ -409,22 +435,13 @@ input[type="checkbox" i] {
 
 /* Animācijas */
 
-/* animācija - mantu copējs */
-@keyframes fly-in {
-    0% {
-      transform: scale(0.5) rotate(0deg) translateX(-100%);
-    }
-    50% {
-      transform: scale(1.5) rotate(90deg) translateX(50%);
-    }
-    100% {
-      transform: scale(1) rotate(0deg) translateX(0%);
-    }
-  }
-  
-  .animated-logo {
-    animation: fly-in 2s ease-in-out;
-  }
-  
+/* animācija - sludinājums */
+.sludinajums {
+    transition: transform 0.3s ease;
+}
+
+.sludinajums:hover {
+    transform: translateY(-5px) rotateX(10deg);
+}
 
 

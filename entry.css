@@ -401,3 +401,30 @@ input[type="checkbox" i] {
 
 
 
+
+
+
+
+
+
+/* Animācijas */
+
+/* animācija - mantu copējs */
+@keyframes fly-in {
+    0% {
+      transform: scale(0.5) rotate(0deg) translateX(-100%);
+    }
+    50% {
+      transform: scale(1.5) rotate(90deg) translateX(50%);
+    }
+    100% {
+      transform: scale(1) rotate(0deg) translateX(0%);
+    }
+  }
+  
+  .animated-logo {
+    animation: fly-in 2s ease-in-out;
+  }
+  
+
+

@@ -12,13 +12,45 @@
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    @keyframes fly-in {
+    0% {
+      transform: scale(0.5) rotate(0deg) translateX(-100%);
+    }
+    25% {
+      transform: scale(1.5) rotate(90deg) translateX(50%);
+    }
+    50% {
+      transform: scale(3) rotate(180deg) translateX(50%);
+    }
+    75% {
+      transform: scale(4.5) rotate(270deg) translateX(50%);
+    }
+    100% {
+      transform: scale(1) rotate(0deg) translateX(0%);
+    }
+    }
+    
+    .animated-div {
+    position: absolute; /* Lai varētu precīzi kontrolēt elementa atrašanās vietu */
+    left: 0; /* Uzstādam sākotnējo pozīciju kreisajā malā */
+    top: 50%; /* Vertikāli centrējam elementu */
+    transform: translateY(-50%); /* Horizontāli centrējam elementu */
+    animation: fly-in 4s infinite; /* Izpildām animāciju */
+}
+
+     .animated-logo {
+    animation: fly-in 2s ease-in-out;
+    }
+  
+
     </style>
 <body id = "enter_background">
     <div id="main_entry_start">
         <div id="top">
             <div class="entry_start_top">
                 <a href="index.html">
-                    <img src="images/mantu copējs.png" class="entry_mantu_copejs">
+                    <img src="images/mantu copējs.png" class="entry_mantu_copejs animated-logo">
                 </a>
                 <ul>
                     <a href = ""><li class = "vesture_enter">VĒSTURE</li></a>

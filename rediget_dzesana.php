@@ -16,7 +16,7 @@
         <div id="top">
             <div class="entry_start_top">
                 <img src="images/mantu copējs.png" class="dzest_mantu_copejs">
-                <form id="deleteSelectedForm" action="?delete=selected" method="POST">
+                <form id="deleteSelectedForm" action="delete_ads.php?delete=selected" method="POST">
                     <button type="submit" class="dzest_sludinajumus">Dzēst atlasītos sludinājumus</button>
                     <input type="hidden" id="selectedAdsInput" name="selected_ads" value="">
                 </form>

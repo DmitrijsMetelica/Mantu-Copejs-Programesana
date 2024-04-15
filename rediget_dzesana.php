@@ -16,8 +16,10 @@
         <div id="top">
             <div class="entry_start_top">
                 <img src="images/mantu copējs.png" class="dzest_mantu_copejs">
-                <a><li class = "dzesana_nedarbojas">TEHNISKU IEMESLU DĒĻ NEDARBOJAS!</li></a>
-                <button type="button" class="dzest_sludinajumus">Dzēst</button>;
+                <form id="deleteSelectedForm" action="?delete=selected" method="POST">
+                    <button type="submit" class="dzest_sludinajumus">Dzēst atlasītos sludinājumus</button>
+                    <input type="hidden" id="selectedAdsInput" name="selected_ads" value="">
+                </form>
             </div>
         </div>
         <div id="content">
@@ -28,7 +30,7 @@
             </div>  
             <form id="deleteForm" action="rediget_dzesana.php" method="POST">
                 <div class="sludinajumu_parskats">
-                    <?php
+                     <?php
                     require_once('db.php');
 
                     if (session_status() == PHP_SESSION_NONE) {
@@ -85,54 +87,15 @@
     <script src='delete_mod.js'></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const deleteCheckboxes = document.querySelectorAll('.deleteCheckbox');
-            const deleteButton = document.querySelector('.dzest_sludinajumus');
+            const deleteSelectedForm = document.getElementById('deleteSelectedForm');
+            const selectedAdsInput = document.getElementById('selectedAdsInput');
 
-            deleteCheckboxes.forEach(function(checkbox) {
-                checkbox.addEventListener('change', function() {
-                    let anyChecked = false;
-                    deleteCheckboxes.forEach(function(checkbox) {
-                        if (checkbox.checked) {
-                            anyChecked = true;
-                        }
-                    });
-
-                    if (anyChecked) {
-                        deleteButton.style.display = 'block';
-                    } else {
-                        deleteButton.style.display = 'none';
-                    }
-                });
-            });
-
-            deleteButton.addEventListener('click', function(e) {
-                e.preventDefault(); // Novēršam noklusējuma formas iesniegšanu
-
-                console.log("Delete button clicked"); // Pārbauda, vai pogas klausītājs tiek aktivizēts pareizi
-
-                const sludinajumiToDelete = [];
-                deleteCheckboxes.forEach(function(checkbox) {
-                    if (checkbox.checked) {
-                        sludinajumiToDelete.push(checkbox.dataset.sludinajumsId);
-                    }
-                });
-
-                console.log("Sludinajumi to delete:", sludinajumiToDelete); // Pārbauda, vai atzīmētie sludinājumi tiek pareizi identificēti
-
-                if (sludinajumiToDelete.length > 0) {
-                    const deleteForm = document.getElementById('deleteForm');
-                    const sludinajumsIdInput = document.createElement('input');
-                    sludinajumsIdInput.setAttribute('type', 'hidden');
-                    sludinajumsIdInput.setAttribute('name', 'sludinajums_id');
-                    sludinajumsIdInput.setAttribute('value', sludinajumiToDelete.join(','));
-
-                    deleteForm.appendChild(sludinajumsIdInput);
-
-                    console.log("Deleting sludinajumi..."); // Paziņo, ka notiek sludinājumu dzēšana
-
-                    deleteForm.submit(); // Iesniedzam formu, lai nosūtītu dzēšanas pieprasījumu
-                } else {
-                    console.log('Nav atlasīts neviens sludinājums dzēšanai.');
+            deleteSelectedForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (confirm('Vai tiešām vēlaties dzēst atlasītos sludinājumus?')) {
+                    const selectedAds = Array.from(document.querySelectorAll('.deleteCheckbox:checked')).map(checkbox => checkbox.dataset.sludinajumsId);
+                    selectedAdsInput.value = selectedAds.join(',');
+                    this.submit();
                 }
             });
         });

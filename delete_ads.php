@@ -11,9 +11,9 @@ if (isset($_POST['selected_ads'])) {
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-        echo "<p>Atlasītie sludinājumi ir veiksmīgi dzēsti.</p>";
+        echo "<script>alert('Sludinājums veiksmīgi dzēsts'); window.location='rediget_dzesana.php';</script>";
     } else {
-        echo "<p>Radās kļūda. Sludinājumi netika dzēsti.</p>";
+        echo "<script>alert('Sludinājums neveiksmīgi dzēsts'); window.location='rediget_dzesana.php';</script>";
     }
 
     $stmt->close();
